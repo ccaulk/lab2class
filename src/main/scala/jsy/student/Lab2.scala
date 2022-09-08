@@ -62,7 +62,9 @@ object Lab2 extends jsy.util.JsyApplication with Lab2Like {
     require(isValue(v))
     (v: @unchecked) match {
       case N(n) => n
-      case _ => ???
+      case B(b) => if (b) -1 else ???
+      case S(s) => ???
+      case Undefined => ??? 
     }
   }
 
@@ -86,9 +88,13 @@ object Lab2 extends jsy.util.JsyApplication with Lab2Like {
   def eval(env: Env, e: Expr): Expr = {
     e match {
       /* Base Cases */
-
+      case N(n) => ???
+      case B(b) => ???
+      case S(s) => ???
+      case Undefined => ???
       /* Inductive Cases */
       case Print(e1) => println(pretty(eval(env, e1))); Undefined
+      case If(e1,e2,e3) => ???
 
       case _ => ???
     }
